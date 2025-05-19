@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RBA RESORT - Summer is calling</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+<style>
+  * {
+    box-sizing: border-box
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #fdfdfd;
+    scroll-behavior: smooth;
+  }
+  header {
+    background: linear-gradient(90deg, #00aaff, #0066ff);
+    padding: 20px 40px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header h1 {
+    font-weight: 600;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #ffd700;
+  }
+  .hero {
+    height: 90vh;
+    background: url('RBA bridge.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+    padding: 0 20px;
+    text-align: center;
+  }
+  .hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+  }
+  .hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+  }
+  .btn-primary {
+    background: #ffd700;
+    color: #0066ff;
+    padding: 15px 35px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+  }
+  .btn-primary:hover {
+    background-color: #ffca28;
+  }
+  main {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px 60px;
+  }
+  section {
+    margin-bottom: 60px;
+  }
+  h3.section-title {
+    font-size: 2rem;
+    text-align: center;
+    color: #0066ff;
+    margin-bottom: 40px;
+    font-weight: 600;
+  }
+  .destinations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 30px;
+  }
+  .card {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  .card-content {
+    padding: 20px;
+    flex: 1;
+  }
+  .card-content h4 {
+    margin: 0 0 10px;
+    color: #00aaff;
+  }
+  .card-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #555;
+  }
+  .tips-list {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+  .tips-list li {
+    margin-bottom: 15px;
+  }
+  .newsletter {
+    background: #00aaff;
+    padding: 40px 20px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 8px 25px rgba(0,170,255,0.3);
+  }
+  .newsletter h3 {
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  .newsletter input[type="email"] {
+    padding: 12px 15px;
+    width: 70%;
+    border-radius: 30px 0 0 30px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+  }
+  .newsletter button {
+    padding: 12px 25px;
+    border-radius: 0 30px 30px 0;
+    border: none;
+    background: #ffd700;
+    color: #0066ff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .newsletter button:hover {
+    background-color: #ffca28;
+  }
+  footer {
+    background: #0066ff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+  footer a {
+    color: #ffd700;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: 600;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 600px) {
+    .hero h2 {
+      font-size: 2.2rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+    .newsletter input[type="email"] {
+      width: 100%;
+      border-radius: 30px;
+      margin-bottom: 15px;
+    }
+    .newsletter button {
+      width: 100%;
+      border-radius: 30px;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1 onclick="scrollToTop()">Home</h1>
+  <nav>
+    <a href="#destinations">Gallery</a>
+    <a href="#travel-tips">about</a>
+    <a href="#newsletter">Subscription</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>RBA BEACH RESORT</h2>
+  <p>Explore the beautiful beaches here in Tukuran. Feel the summer vibes.</p>
+  <button class="btn-primary" onclick="document.getElementById('destinations').scrollIntoView({ behavior: 'smooth' })">Explore Destinations</button>
+</section>
+
+<main>
+  <section id="destinations">
+    <h3 class="section-title">Gallery</h3>
+    <div class="destinations">
+      <article class="card">
+        <img src="rba entrance.jpg" alt="paris" />
+        <div class="card-content">
+          <h4>RBA, entrance</h4>
+          <p>This is where you can park all your vehicls and you can also see the beautiful and crystal water below.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="RBA bridge.jpg" alt="Tokyo" />
+        <div class="card-content">
+          <h4>RBA, Bridge</h4>
+          <p>A bridge who leds you to your destination.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="RBA cottages.jpg" />
+        <div class="card-content">
+          <h4>RBA, cottages</h4>
+          <p>The cottages where you can put all your things, rest, and party.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="RBA bridge below.jpg" />
+        <div class="card-content">
+          <h4>RBA bridge(pov: below)</h4>
+          <p>A full of green bridge will wave you goodbye.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="travel-tips">
+    <h3 class="section-title">About</h3>
+    <ul class="tips-list">
+      <p>Under Construction resort</p>
+      <p>Location: Barangay Militar, Tukuran,  Zamboanga Del Sur</p>
+      <p>Contact#: 09076777110</p>
+       <a href="#" aria-label="https://www.facebook.com/share/1CSeUQ8zY5/">Facebook: RBA Highland Beach Resort</a>
+      <p>Entrance fee ₱50.00</p>
+      <p>Cottage ₱300.00</p>
+      <p>24/7 open</p>
+    </ul>
+  </section>
+
+  <section id="newsletter" class="newsletter">
+    <h3>Subscribe for RAB Resort Tukuran</h3>
+    <form onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+      <input type="email" placeholder="Your Email Address" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 bumoy | Follow us: 
+  <a href="#" aria-label="https://www.facebook.com/share/1ZPDrgTRVX/">Facebook</a> |
+  <a href="#" aria-label="https://www.instagram.com/itscrsmiemadear?igsh=emkyajZua3A2NnZ4">Instagram</a>
+</footer>
+
+<script>
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
+
+        
